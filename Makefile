@@ -10,5 +10,5 @@ lint:
 	pylint --disable=R,C *.py
 run:
 	# Run app
-	python main.py
+	uvicorn main:app --host 0.0.0.0 --port 8080 --reload
 all: install format lint
