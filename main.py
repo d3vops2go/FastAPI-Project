@@ -21,7 +21,7 @@ def index(limit: int = 10, published: bool = True, sort: Optional[str] = None):
 
 @app.post("/blog")
 def create_blog(blog: Blog):
-    return {"message" : f"{blog.title} is created"}
+    return {"message": f"{blog.title} is created"}
 
 
 @app.get("/blog/unpublished")

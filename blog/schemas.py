@@ -1,6 +1,7 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Annotated
 
+
 class Blog(BaseModel):
-    title: Annotated[str, "The title of the blog post"]
-    body: Annotated[str, "The content of the blog post"]
+    title: Annotated[str, Field(..., max_length=50, min_length=3)]
+    body: Annotated[str, Field(..., max_length=50, min_length=3)]
